@@ -37,6 +37,8 @@ const config = {
         docs: {
           // Serve the docs at the site's root.
           routeBasePath: '/',
+          // Markdown content lives under docs/pages/ (relative to this config file).
+          path: 'pages',
           sidebarPath: './sidebars.js',
         },
         blog: false,
