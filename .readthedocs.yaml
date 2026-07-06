@@ -27,4 +27,4 @@ build:
           
           export BASE_URL
           cd docs/ && npm run build
-          cp --recursive docs/build/* $READTHEDOCS_OUTPUT/html/
+        - cp --recursive docs/build/* $READTHEDOCS_OUTPUT/html/
