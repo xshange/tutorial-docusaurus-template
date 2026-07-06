@@ -11,4 +11,23 @@ build:
       html:
         - cd docs/ && npm run build
         - mkdir --parents $READTHEDOCS_OUTPUT/html/
+        - mkdir -p $READTHEDOCS_OUTPUT/html/
+        - |
+          # 构建 BASE_URL
+          # READTHEDOCS_LANGUAGE 可能的值: en, zh-cn, zh-tw, ja, fr, de, etc.
+          LANG="${READTHEDOCS_LANGUAGE:-en}"
+          VERSION="${READTHEDOCS_VERSION:-latest}"
+          
+          # 如果是默认语言 (en)，不加语言前缀
+          if [ "$LANG" = "en" ]; then
+            BASE_URL="/$VERSION/"
+          else
+            BASE_URL="/$LANG/$VERSION/"
+          fi
+          
+          echo "🌐 Language: $LANG"
+          echo "📌 Version: $VERSION"
+          echo "🔗 BASE_URL: $BASE_URL"
+          
+          export BASE_URL
         - cp --recursive docs/build/* $READTHEDOCS_OUTPUT/html/
