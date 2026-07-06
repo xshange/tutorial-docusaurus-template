@@ -16,7 +16,7 @@ const config = {
   },
 
   url: 'https://your-docusaurus-site.example.com',
-  baseUrl: '/',
+  baseUrl: '/zh-cn/latest/',
 
   // Required for compatibility with Read the Docs.
   // See https://docs.readthedocs.io/en/stable/intro/docusaurus.html
