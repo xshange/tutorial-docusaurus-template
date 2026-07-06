@@ -26,5 +26,5 @@ build:
           echo "🔗 BASE_URL: $BASE_URL"
           
           export BASE_URL
-          cd docs/ && npm run build
+          cd docs/ && BASE_URL="$BASE_URL" npm run build
         - cp --recursive docs/build/* $READTHEDOCS_OUTPUT/html/
